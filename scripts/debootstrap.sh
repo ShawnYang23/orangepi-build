@@ -68,9 +68,11 @@ PRE_INSTALL_DISTRIBUTION_SPECIFIC
 
 		#[[ $EXTERNAL_NEW == prebuilt ]] && chroot_installpackages "yes"
 
-		# stage: user customization script
-		# NOTE: installing too many packages may fill tmpfs mount
-		customize_image
+	echo "VIBE ----> customize img!!"
+	# stage: user customization script
+	# NOTE: installing too many packages may fill tmpfs mount
+	customize_image
+	echo "VIBE ----> done img!!"
 
 		# remove packages that are no longer needed. Since we have intrudoced uninstall feature, we might want to clean things that are no longer needed
 		display_alert "No longer needed packages" "purge" "info"
