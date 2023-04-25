@@ -33,9 +33,11 @@ Main() {
 			# your code here
 			;;
 		bionic)
+			VibeCustomImage
 			# your code here
 			;;
 		focal)
+			VibeCustomImage
 			# your code here
 			;;
 		noble)
@@ -45,14 +47,16 @@ Main() {
 	esac
 } # Main
 
-JammyVibeCustomImage() {
+VibeCustomImage() {
 	echo "Installing Ubuntu Focol- Vibe Custom Image"
 	
 	echo "---> installing python pip and pyaudio"
 	sudo apt-get update
-	sudo apt-get install python3-dev python3-pip python3-pyaudio
 	
-
+	sudo apt-get install -y software-properties-common python3.8 python3-dev python3-pip python3-pyaudio python3-setuptools
+	
+	sudo update-alternatives  --set python /usr/bin/python3.8
+	
 	echo "---> installing python pip dependency libs"
 	pip3 install pyusb pyaudio numpy pyserial v4l2py
 
